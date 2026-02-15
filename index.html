@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Finder Gayrimenkul | Minimalist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+        :root {
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Didact Gothic', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        h1, h2, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Sayfa Geçiş Animasyonları */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Menü Animasyonu */
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gold-text { color: var(--gold); }
+        .gold-border { border-color: var(--gold); }
+        
+        /* Özel Buton */
+        .btn-luxury {
+            background-color: #1a1a1a;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-luxury:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Üst Menü İkonu (Sabit) -->
+    <div class="fixed top-8 left-8 z-50">
+        <button onclick="toggleMenu()" class="text-3xl hover:text-gold transition p-2 bg-white/80 rounded-full backdrop-blur-sm">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Tam Ekran Menü (Overlay) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform -translate-x-full flex flex-col justify-center items-center">
+        <button onclick="toggleMenu()" class="absolute top-8 right-8 text-4xl hover:text-gold transition">✕</button>
+        
+        <div class="flex flex-col space-y-8 text-center">
+            <a href="#" onclick="showPage('home')" class="text-4xl brand-font hover:text-gold transition">Ana Sayfa</a>
+            <a href="#" onclick="showPage('about')" class="text-4xl brand-font hover:text-gold transition">Biz Kimiz?</a>
+            <a href="#" onclick="showPage('properties')" class="text-4xl brand-font hover:text-gold transition">Emlaklarımız</a>
+            <a href="#" onclick="showPage('feedback')" class="text-4xl brand-font hover:text-gold transition">Feedback</a>
+        </div>
+
+        <div class="absolute bottom-10 text-sm text-gray-400">
+            BEST FINDER GAYRİMENKUL ©️ 2025
+        </div>
+    </div>
+
+    <!-- 1. ANA SAYFA (Home Page) -->
+    <div id="home" class="page-section active min-h-screen">
+        <!-- Hero Kısmı (WhatsApp Profil Stili - Beyaz Ekran) -->
+        <div class="h-[70vh] flex flex-col justify-center items-center text-center px-4 relative">
+            <div class="flex flex-col md:flex-row items-center gap-6 animate-fade">
+                <!-- Büyük Marka İsmi -->
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tight text-slate-900">
+                    BEST FINDER
+                    <span class="block text-2xl md:text-3xl font-normal tracking-[0.5em] mt-2 text-gray-500 uppercase">Gayrimenkul</span>
+                </h1>
+                
+                <!-- Logo -->
+                <div class="w-24 h-24 border-2 border-gold rounded-full flex items-center justify-center text-gold text-4xl shadow-xl bg-white mt-4 md:mt-0">
+                    <i class="fas fa-home"></i>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 animate-bounce text-gray-300">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </div>
+        </div>
+
+        <!-- Marka Prestiji & İletişim (Aşağı Kaydırınca) -->
+        <div class="bg-gray-50 py-24 px-8 border-t border-gray-100">
+            <div class="max-w-4xl mx-auto text-center">
+                <i class="fas fa-quote-left text-gold text-4xl mb-6"></i>
+                <h2 class="text-3xl md:text-4xl brand-font mb-8 leading-relaxed">
+                    "Van'ın en köklü lokasyonlarında, sadece size özel bir yaşam kurguluyoruz. Lüks, bir seçenek değil standarttır."
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 mt-16 text-left bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-gold">Merkez Ofis</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            İpekyolu Caddesi, No: 142<br>
+                            Golden Plaza, Kat: 5<br>
+                            Van, Türkiye
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-gold">İletişim</h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            +90 (432) 215 00 00<br>
+                            info@bestfinder.com
+                        </p>
+                        <a href="tel:+904322150000" class="btn-luxury px-8 py-3 rounded-full inline-block">
+                            Hemen Ara
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. BİZ KİMİZ (About Page) -->
+    <div id="about" class="page-section pt-32 px-8 min-h-screen">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-5xl brand-font mb-2">Hakkımızda</h2>
+            <div class="w-20 h-1 bg-gold mb-12"></div>
+            
+            <div class="prose prose-lg text-gray-600">
+                <p class="mb-6 text-xl leading-relaxed">
+                    Best Finder Gayrimenkul, Van'ın gelişen mimari yapısına yön veren, sadece gayrimenkul değil "yaşam tarzı" sunan butik bir danışmanlık firmasıdır.
+                </p>
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" class="w-full h-80 object-cover rounded-2xl mb-8 grayscale hover:grayscale-0 transition duration-700" alt="Ofis">
+                <p class="mb-6">
+                    Edremit'ten Tuşba'ya kadar uzanan geniş portföyümüzle, yatırımcılarımıza en yüksek getiriyi, ev sahiplerine ise huzuru vaat ediyoruz.
+                </p>
+                
+                <div class="grid grid-cols-3 gap-4 mt-12 text-center">
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <span class="block text-4xl font-bold text-gold mb-2">10+</span>
+                        <span class="text-xs uppercase tracking-widest">Yıllık Tecrübe</span>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <span class="block text-4xl font-bold text-gold mb-2">500+</span>
+                        <span class="text-xs uppercase tracking-widest">Mutlu Aile</span>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <span class="block text-4xl font-bold text-gold mb-2">%100</span>
+                        <span class="text-xs uppercase tracking-widest">Müşteri Memnuniyeti</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. EMLAKLARIMIZ (Properties Page - Separate) -->
+    <div id="properties" class="page-section pt-32 px-6 min-h-screen bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-5xl brand-font mb-2">Portföy</h2>
+                    <p class="text-gray-500">Güncel ilanlarımız aşağıda listelenmiştir.</p>
+                </div>
+                <!-- AI Arama Çubuğu -->
+                <div class="hidden md:flex items-center bg-white rounded-full px-4 py-2 shadow-sm border border-gray-200 w-96">
+                    <input type="text" id="ai-search" placeholder="Yapay zekaya sor: 'Göl manzaralı 3+1'..." class="bg-transparent border-none outline-none flex-1 text-sm p-2">
+                    <button onclick="searchProperties()" class="text-gold hover:text-black transition px-2">
+                        <i class="fas fa-sparkles"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Emlak Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
+                <!-- Emlak Kartı 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group cursor-pointer" onclick="alert('Detaylar için ofisimizi arayınız: +90 432 215 00 00')">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Edremit</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl brand-font mb-2">Sahil Konağı</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-2">Van Gölü'ne sıfır, özel iskeleli ve 2 dönüm bahçeli eşsiz bir mülk.</p>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-4">
+                            <span class="text-xl font-bold">24,000,000 ₺</span>
+                            <span class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:bg-gold group-hover:text-white group-hover:border-gold transition">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emlak Kartı 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group cursor-pointer">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">İpekyolu</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl brand-font mb-2">Merkez Rezidans</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-2">Şehrin kalbinde, akıllı ev sistemleri ve kapalı otoparklı lüks daire.</p>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-4">
+                            <span class="text-xl font-bold">9,500,000 ₺</span>
+                            <span class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:bg-gold group-hover:text-white group-hover:border-gold transition">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emlak Kartı 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group cursor-pointer">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-e328701102b9?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Tuşba</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl brand-font mb-2">Villa Projesi</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-2">Projesi tamamlanmak üzere olan, özel havuzlu site içi villa.</p>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-4">
+                            <span class="text-xl font-bold">15,750,000 ₺</span>
+                            <span class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:bg-gold group-hover:text-white group-hover:border-gold transition">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. FEEDBACK (Geri Bildirim) -->
+    <div id="feedback" class="page-section pt-32 px-8 min-h-screen">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-5xl brand-font mb-4">Geri Bildirim</h2>
+            <p class="text-gray-500 mb-12">Hizmet kalitemizi artırmak için düşünceleriniz bizim için altın değerindedir.</p>
+
+            <form class="text-left bg-gray-50 p-10 rounded-3xl space-y-6">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Deneyiminiz</label>
+                    <div class="flex gap-4 text-3xl text-gray-300">
+                        <button type="button" class="hover:text-gold transition"><i class="far fa-sad-tear"></i></button>
+                        <button type="button" class="hover:text-gold transition"><i class="far fa-meh"></i></button>
+                        <button type="button" class="hover:text-gold transition"><i class="far fa-smile"></i></button>
+                        <button type="button" class="hover:text-gold transition"><i class="far fa-laugh-beam"></i></button>
+                        <button type="button" class="hover:text-gold transition"><i class="fas fa-heart text-gold"></i></button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Mesajınız</label>
+                    <textarea rows="4" class="w-full bg-white border-none p-4 rounded-xl shadow-sm outline-none focus:ring-1 focus:ring-gold" placeholder="Bize ne söylemek istersiniz?"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">E-posta (İsteğe bağlı)</label>
+                    <input type="email" class="w-full bg-white border-none p-4 rounded-xl shadow-sm outline-none focus:ring-1 focus:ring-gold" placeholder="ornek@email.com">
+                </div>
+
+                <button type="button" onclick="alert('Değerli görüşleriniz için teşekkür ederiz.')" class="w-full py-4 btn-luxury rounded-xl font-bold uppercase tracking-widest text-sm">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Menü Aç/Kapa
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('-translate-x-full')) {
+                menu.classList.remove('-translate-x-full');
+            } else {
+                menu.classList.add('-translate-x-full');
+            }
+        }
+
+        // Sayfa Değiştirme Fonksiyonu
+        function showPage(pageId) {
+            // Menüyü kapat
+            document.getElementById('mobile-menu').classList.add('-translate-x-full');
+
+            // Tüm sayfaları gizle
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Seçilen sayfayı göster
+            document.getElementById(pageId).classList.add('active');
+
+            // Sayfa başına kaydır
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function searchProperties() {
+            const query = document.getElementById('ai-search').value;
+            if(query) {
+                alert("Gemini AI şu an bu isteği işliyor: " + query);
+                // Buraya gerçek API entegrasyonu gelebilir.
+            }
+        }
+    </script>
+</body>
+</html>
